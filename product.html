@@ -1,0 +1,28 @@
+<form name="myForm">
+  <div>
+    <label>Image</label>
+    <div class="dropdown" ng-controller="dropdownImageCtrl">
+      <a href="javascript:" class="dropdown-toggle btn">{{getImage(product.image).name}}<i class="icon-caret-down icon-right"></i></a>
+      <ul class="dropdown-menu dropdown-images">
+        <li ng-repeat="image in images | orderBy:'name'">
+          <a ng-click="setImage(image.id)">
+            <img ng-src="{{image.src}}" />{{image.name}}</a>
+        </li>
+      </ul>
+      <input type="text" name="image" style="display:none;" ng-model="product.image">
+    </div>
+  </div>
+
+  <div>
+    <label>Name</label>
+    <input type="text" name="name" ng-model="product.name">
+  </div>
+ 
+  <label>Description</label>
+  <textarea name="description" ng-model="product.description"></textarea>
+ 
+  <br>
+  <a href="#/" class="btn">Cancel</a>
+  <button class="btn btn-info" ng-click="save()">Save</button>
+  <button class="btn btn-danger" ng-click="destroy()" ng-show="product.$id">Delete</button>
+</form>

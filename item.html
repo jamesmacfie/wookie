@@ -1,0 +1,59 @@
+<form name="items" class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label">Product</label>
+    <div class="dropdown controls" ng-controller="dropdownProductCtrl">
+      <a href="javascript:" class="dropdown-toggle btn">{{getProduct(item.product).name}}<i class="icon-right icon-caret-down"></i></a>
+      <ul class="dropdown-menu dropdown-products">
+        <li ng-repeat="product in products | orderBy:'name'">
+          <a ng-click="setProduct(product.$id)">
+            <img src="{{getImage(product.image).src}}">{{product.name}}</a>
+        </li>
+      </ul>
+      <input type="hidden" name="product" ng-model="item.product" value="{{item.product}}">
+    </div>
+  </div>
+
+  <hr/>
+  
+  <div class="control-group">
+    <label class="control-label">Quantity</label>
+    <div class="controls">
+      <input type="number" min="0" name="name" ng-model="item.quantity">
+    </div>
+  </div>
+  
+  <hr/>
+  
+  <div class="control-group">
+    <label class="control-label">Date added</label>
+    <div class="controls">
+      <input type="date" name="date" ng-model="item.date">
+    </div>
+  </div>
+  
+  <hr/>
+  
+  <div class="control-group">
+    <label class="control-label">Name</label>
+    <div class="controls">
+      <input type="text" name="name" class="input-block-level" ng-model="item.name">
+    </div>
+  </div>
+  
+  <hr/>
+  
+  <div class="control-group">
+    <label class="control-label">Description</label>
+    <div class="controls">
+      <textarea name="description" ng-model="item.description" class="input-block-level"></textarea>
+    </div>
+  </div>
+ 
+  <hr/>
+ 
+  <div class="edit-controls">
+    <a href="#/" class="btn">Cancel</a>
+    <button class="btn btn-info" ng-click="save()">Save</button>
+    <button class="btn btn-danger" ng-click="destroy()" ng-show="item.$id">Delete</button>
+  </div>
+</form>

@@ -1,0 +1,12 @@
+<input class="filter" type="text" placeholder="Filter items" ng-model="itemSearch">
+<a class="btn btn-new" href="#/item/new"><i class="icon-plus icon-left"></i>New</a>
+
+<div ng-repeat="item in items | filter:itemSearch | orderBy:'name'" class="item-holder">
+  <img ng-src="{{getImage(getProduct(item.product).image).src}}" class="item-image" />
+  <div class="item-details">
+    <h4><span class="multiply">x</span>{{item.quantity}} Added on {{item.date}}</h4>
+    <h3>{{item.name}} <span ng-show="item.storage">(stored in ...)</span></h3>
+    <p ng-show="item.description">{{item.description}}</p>
+    <a class="btn item-edit" href="#/item/edit/{{item.$id}}"><i class="icon-pencil"></i></a>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="wookie">
+  <head>
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-resource.min.js"></script>
+    <script src="js/libs/firebase.js"></script>
+    <script src="js/libs/angularFire.js"></script>
+    <script src="js/libs/ui-bootstrap-custom-0.5.0.js"></script>
+    <script src="js/libs/ui-bootstrap-custom-tpls-0.5.0.js"></script>
+    <script src="js/script.js"></script>
+<!--
+    <link rel="stylesheet" href="css/libs/pure-min.css">
+    <link rel="stylesheet" href="css/libs/baby-blue.css">
+    <link rel="stylesheet" href="css/libs/bootstrap.css">
+-->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="menu">
+          <a class="heading" href="#/">Wookie</a>
+          <ul class="menu-items">
+            <li ng-class="{true: 'active'}[getActiveTab('item')]">
+              <a href="#/">Items</a>
+            </li>
+            <li ng-class="{true: 'active'}[getActiveTab('product')]">
+              <a href="#/products">Products</a>
+            </li>
+          </ul> 
+        </div>
+        <div class="offset2 span10">
+          <header class="header">
+            <h1 ng-bind="title">Loading...</h1>
+            <h2>A freezer inventory app</h2>
+          </header>
+          <div class="content" ng-view></div>
+        </div>  
+        </div>
+      </div>
+    </div>
+  
+
+      
+    
+
+  </body>
+</html>

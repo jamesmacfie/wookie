@@ -1,0 +1,188 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import "font-awesome";
+
+$h1: #333;
+$h2: #ccc;
+$h3: #333;
+$h4: #999;
+$menu-background: #191818;
+$menu-heading: #fff;
+$menu-item-link: #999;
+$menu-item-active: #1f8dd6;
+$menu-item-active-text: #fff;
+$menu-item-hover: #333;
+$header-bottom-border: #eee;
+
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  color: $h1;
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 40px;
+  margin: 8px 0;
+}
+
+h2 {
+  color: $h2;
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0;
+}
+
+h3 {
+  color: $h3;
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0 0 10px 0;
+}
+
+h4 {
+  color: $h4; 
+  font-size: 14px;
+  line-height: 16px;
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+
+.btn-new {
+  margin-bottom: 5px;
+}
+
+.menu {
+  background: $menu-background;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 150px;
+  z-index: 100;
+  
+  .heading {
+    color: $menu-heading;
+    display: block;
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 10px 0 10px 10px;  
+    text-transform: uppercase;
+  }
+}
+
+.menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  >li {
+    font-size: 14px;
+    
+    &.active {
+      background-color: $menu-item-active;
+      color: $menu-item-active-text;
+      a {
+        color: $menu-item-active-text;
+        
+        &:hover {
+          background-color: inherit;
+          color: $menu-item-active-text;
+        }
+      }
+    }
+    >a {
+      color: $menu-item-link;
+      display: block;
+      padding: 9px 0 9px 9px;
+      
+      &:hover {
+        background-color: $menu-item-hover;
+      }
+    }
+  }
+}
+
+.header {
+  border-bottom: 1px solid $header-bottom-border;
+  margin-bottom: 15px;
+  min-height: 80px;
+  padding: 15px;
+  text-align: center;
+}
+
+input.filter {
+  box-sizing: border-box;
+  height: 32px;
+  width: 100%;
+  
+}
+
+.icon-right {
+  margin-left: 5px;
+}
+
+.icon-left {
+  margin-right: 5px;
+}
+
+.dropdown-menu {
+  max-height: 160px;
+  overflow-y: scroll;
+  >li {
+    a {
+      line-height: 50px;
+      img {
+        float: left;
+        height: 50px;
+        margin: 0 5px;
+        width: 50px;
+      }
+    }
+  }
+}
+
+.edit-controls {
+  float: right;
+}
+
+.multiply {
+  text-transform: lowercase;
+}
+
+.item-edit {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.product-edit {
+  position: absolute;
+  bottom: 0;
+  left: 120px;
+}
+
+.item-holder {
+  @extend .clearfix;
+  
+  margin: 5px 0 20px;
+  position: relative;
+}
+
+.item-image, .product-image{
+  border-radius: 3px;
+  float: left;
+  height: 100px;
+  margin-right: 20px;
+  width: 100px;
+}
+
+.product-holder {
+  @extend .clearfix;
+  
+  float: left;
+  margin: 5px 0 20px;
+  position: relative;
+  width: 390px;
+}

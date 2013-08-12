@@ -1,0 +1,11 @@
+<input class="filter" type="text" placeholder="Filter products" ng-model="productSearch">
+
+<a class="btn btn-new" href="#/product/new"><i class="icon-plus icon-left"></i>New</a>
+
+<div>
+  <div ng-repeat="product in products | filter:productSearch | orderBy:'name'" class="product-holder">
+    <img ng-src="{{getImage(product.image).src}}" class="product-image" />
+    <h4>{{product.name}}</h4>
+    <a href="#/product/edit/{{product.$id}}" class="btn product-edit"><i class="icon-pencil"></i></a>
+  </div>
+</div>
