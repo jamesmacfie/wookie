@@ -1,11 +1,11 @@
 var wookie = angular.module('wookie', ['firebase', 'ui.bootstrap']).
   //Items - firebase
-  value('fbItemsURL', 'https://<name>.firebaseio.com/items/').
+  value('fbItemsURL', 'https://wookie.firebaseio.com/items/').
   factory('Items', function(angularFireCollection, fbItemsURL) {
     return angularFireCollection(fbItemsURL);
   }).
   //Products - firebase
-  value('fbProductsURL', 'https://<name>.firebaseio.com/products/').
+  value('fbProductsURL', 'https://wookie.firebaseio.com/products/').
   factory('Products', function(angularFireCollection, fbProductsURL) {
     return angularFireCollection(fbProductsURL);
   }).
